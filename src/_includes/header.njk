@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="brand" aria-label="{{ settings.companyName }} — Home">
+      <img src="/assets/img/图2.jpg" alt="{{ settings.companyName }} logo" class="brand-logo" />
+      <span class="brand-text">
+        <span class="brand-name">{{ settings.brandShort }}</span>
+        <span class="brand-sub">PTY LTD</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:{{ settings.contacts.elsa.phone | telLink }}" class="nav-cta">Call {{ settings.contacts.elsa.name }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

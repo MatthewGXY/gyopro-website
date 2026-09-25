@@ -1,0 +1,13 @@
+{
+  "name": "gyo-pro-website",
+  "version": "1.0.0",
+  "description": "GYO PRO PTY LTD brand website — Eleventy + Decap CMS",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve --port 8080",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gyopro.com.au/sitemap.xml

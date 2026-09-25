@@ -1,0 +1,53 @@
+<aside id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <p id="cookie-title" class="cookie-title">{{ cookies.title }}</p>
+      <p id="cookie-desc" class="cookie-desc">{{ cookies.description }}</p>
+      {% if cookies.learnMoreUrl %}
+        <a href="{{ cookies.learnMoreUrl }}" class="cookie-link" data-cookie-action="learn">Learn more</a>
+      {% else %}
+        <a href="#" class="cookie-link" data-cookie-action="learn">Learn more</a>
+      {% endif %}
+    </div>
+
+    <div class="cookie-actions">
+      <button type="button" class="cookie-btn cookie-btn-settings" data-cookie-action="settings">Settings</button>
+      <button type="button" class="cookie-btn cookie-btn-decline" data-cookie-action="decline">Decline</button>
+      <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-action="accept">Accept</button>
+    </div>
+  </div>
+
+  <div id="cookie-settings" class="cookie-settings" hidden>
+    <p class="cookie-settings-title">Cookie preferences</p>
+    <ul class="cookie-pref-list">
+      <li>
+        <label>
+          <input type="checkbox" name="essential" checked disabled />
+          <span>
+            <strong>Essential</strong>
+            <small>Required for the site to work. Always on.</small>
+          </span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="analytics" checked />
+          <span>
+            <strong>Analytics</strong>
+            <small>Helps us understand site traffic and usage.</small>
+          </span>
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="marketing" />
+          <span>
+            <strong>Marketing</strong>
+            <small>Used to deliver ads relevant to your interests.</small>
+          </span>
+        </label>
+      </li>
+    </ul>
+    <button type="button" class="cookie-btn cookie-btn-save" data-cookie-action="save">Save preferences</button>
+  </div>
+</aside>

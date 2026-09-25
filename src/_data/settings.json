@@ -1,0 +1,26 @@
+{
+  "companyName": "GYO PRO PTY LTD",
+  "brandShort": "GYO PRO",
+  "tagline": "Plaster & Gyprock specialist Services",
+  "heroTitle": "Crafting ceilings & walls\nthat built Australia on.",
+  "heroLede": "Specialists in gyprock ceilings & walls for commercial and residential projects — from framing to the final float-and-set finish.",
+  "contacts": {
+    "elsa": {
+      "name": "Elsa",
+      "lang": "English",
+      "phone": "+61 450 920 702"
+    },
+    "yao": {
+      "name": "姚",
+      "lang": "仅限中文",
+      "phone": "+61 452 053 381"
+    },
+    "email": "Manager@gyopro.com.au"
+  },
+  "abn": "60 681 278 982",
+  "serviceArea": "Servicing Australia-wide · Commercial & Residential",
+  "seo": {
+    "title": "GYO PRO PTY LTD | Plaster & Gyprock Specialist Services Australia",
+    "description": "GYO PRO PTY LTD — Australian plaster and gyprock specialists. Cornices, insulation, framing, plasterboard and float & set rendering for commercial and residential projects Australia-wide."
+  }
+}

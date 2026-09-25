@@ -1,0 +1,26 @@
+<li class="service-card">
+  {%- set icon = svc.icon %}
+  <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+    {%- if icon == "cornice" %}
+      <path d="M6 24c4-6 10-9 18-9s14 3 18 9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M10 28c3-3 8-5 14-5s11 2 14 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M14 32c3-2 7-3 10-3s7 1 10 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    {%- elif icon == "insulation" %}
+      <path d="M10 18l14-8 14 8M10 18v18m28-18v18M10 36h28" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M18 28h12v8H18z" stroke="currentColor" stroke-width="2.2"/>
+      <circle cx="24" cy="14" r="1.5" fill="currentColor"/>
+    {%- elif icon == "framing" %}
+      <rect x="6" y="10" width="36" height="28" rx="1" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M6 18h36M6 26h36M6 34h36M18 10v28M30 10v28" stroke="currentColor" stroke-width="1.5"/>
+    {%- elif icon == "plaster" %}
+      <rect x="8" y="8" width="32" height="32" rx="2" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M8 18h32M8 30h32M18 8v32M30 8v32" stroke="currentColor" stroke-width="1.4"/>
+    {%- elif icon == "float" %}
+      <rect x="6" y="14" width="22" height="14" rx="1" stroke="currentColor" stroke-width="2.2"/>
+      <path d="M28 14l14-6v20l-14-6" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M12 22h6M12 26h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    {%- endif %}
+  </svg>
+  <h3>{{ svc.name }}</h3>
+  <p>{{ svc.description }}</p>
+</li>

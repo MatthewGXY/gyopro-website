@@ -1,0 +1,126 @@
+---
+layout: layout.njk
+title: "{{ settings.seo.title }}"
+description: "{{ settings.seo.description }}"
+---
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">{{ settings.tagline }}</p>
+      <h1>{{ settings.heroTitle | nl2br | safe }}</h1>
+      <p class="lede">{{ settings.heroLede }}</p>
+
+      <ul class="hero-contacts" aria-label="Contact">
+        <li>
+          <span class="contact-label">{{ settings.contacts.elsa.name }} ({{ settings.contacts.elsa.lang }})</span>
+          <a href="tel:{{ settings.contacts.elsa.phone | telLink }}">{{ settings.contacts.elsa.phone }}</a>
+        </li>
+        <li>
+          <span class="contact-label">{{ settings.contacts.yao.name }} ({{ settings.contacts.yao.lang }})</span>
+          <a href="tel:{{ settings.contacts.yao.phone | telLink }}">{{ settings.contacts.yao.phone }}</a>
+        </li>
+        <li>
+          <span class="contact-label">Email</span>
+          <a href="mailto:{{ settings.contacts.email }}">{{ settings.contacts.email }}</a>
+        </li>
+      </ul>
+
+      <a href="#contact" class="btn-primary">Request a quote</a>
+    </div>
+
+    <div class="hero-photos" aria-hidden="true">
+      <div class="photo-tile tile-1"><span>Project photo 1</span></div>
+      <div class="photo-tile tile-2"><span>Project photo 2</span></div>
+      <div class="photo-tile tile-3"><span>Project photo 3</span></div>
+      <div class="photo-tile tile-4"><span>Project photo 4</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="services">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Specialists in Gyprock Ceilings &amp; Walls<br />for Commercial and Residential Projects.</h2>
+    </header>
+
+    <ul class="service-grid">
+      {%- for svc in services %}
+        {% include "service-card.njk" %}
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="projects">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Recent projects</h2>
+      <p class="section-sub">A snapshot of recent commercial and residential jobs across Australia.</p>
+    </header>
+
+    {% set projectList = collections.projects | reverse %}
+    {% if projectList.length > 0 %}
+      <ul class="project-grid">
+        {%- for p in projectList %}
+          <li class="project-card">
+            {%- if p.data.photos and p.data.photos.length > 0 %}
+              <img src="{{ p.data.photos[0] }}" alt="{{ p.data.title }}" loading="lazy" />
+            {%- else %}
+              <span class="project-placeholder">{{ p.data.title }}</span>
+            {%- endif %}
+          </li>
+        {%- endfor %}
+      </ul>
+      <p class="projects-note">
+        Showing {{ projectList.length }} project{{ "s" if projectList.length != 1 else "" }}.
+      </p>
+    {% else %}
+      <ul class="project-grid">
+        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
+        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
+        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
+        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
+        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
+        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
+      </ul>
+      <p class="projects-note">
+        Project photos coming soon. Add them via the admin.
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="container contact-grid">
+    <div>
+      <p class="eyebrow">Get in touch</p>
+      <h2>Talk to us about your project.</h2>
+      <p class="lede">
+        Whether it's a small residential patch or a multi-storey commercial fit-out,
+        we'd love to hear about it. Call, email, or send us your plans.
+      </p>
+    </div>
+
+    <ul class="contact-cards">
+      <li>
+        <h3>{{ settings.contacts.elsa.name }} <span class="lang-tag">{{ settings.contacts.elsa.lang }}</span></h3>
+        <a href="tel:{{ settings.contacts.elsa.phone | telLink }}" class="contact-line">{{ settings.contacts.elsa.phone }}</a>
+      </li>
+      <li>
+        <h3>{{ settings.contacts.yao.name }} <span class="lang-tag">{{ settings.contacts.yao.lang }}</span></h3>
+        <a href="tel:{{ settings.contacts.yao.phone | telLink }}" class="contact-line">{{ settings.contacts.yao.phone }}</a>
+      </li>
+      <li>
+        <h3>Email</h3>
+        <a href="mailto:{{ settings.contacts.email }}" class="contact-line">{{ settings.contacts.email }}</a>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Cornices, Square Set, P50",
+    "description": "Decorative cornices, clean square-set edges and architectural P50 shadow-line details for a finished look.",
+    "icon": "cornice",
+    "order": 1
+  },
+  {
+    "name": "Insulation",
+    "description": "Acoustic and thermal insulation installed to BCA standards for comfort year-round.",
+    "icon": "insulation",
+    "order": 2
+  },
+  {
+    "name": "Framing",
+    "description": "Steel and timber wall framing laid out precisely — the backbone of every partition we build.",
+    "icon": "framing",
+    "order": 3
+  },
+  {
+    "name": "Plasterboard",
+    "description": "Plasterboard sheeting hung, jointed and stopped ready for paint — straight, flush, durable.",
+    "icon": "plaster",
+    "order": 4
+  },
+  {
+    "name": "Float and Set Rendering",
+    "description": "Two-coat cement render — floated and set to a true, paint-ready surface on internal and external walls.",
+    "icon": "float",
+    "order": 5
+  }
+]
