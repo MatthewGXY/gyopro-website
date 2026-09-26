@@ -834,3 +834,22 @@ section { padding: 5rem 0; }
   border-color: var(--gold-bright);
   color: var(--bg);
 }
+
+/* ============================================================
+   Hide Netlify "Powered by" badge
+   (free tier injects a script-rendered link; hide it via CSS)
+   ============================================================ */
+#netlify-badge,
+.netlify-badge,
+a[href="https://www.netlify.com/"],
+a[href^="https://www.netlify.com/?"],
+a[href*="netlify.com"][target="_blank"][rel="noopener"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+}
