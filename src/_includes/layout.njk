@@ -99,6 +99,15 @@
   {% include "footer.njk" %}
   {% include "cookie-banner.njk" %}
 
+  <script>
+    // Netlify Identity email confirmation / invite links land at site root
+    // with #recovery_token=... or #invite_token=... in the URL.
+    // The Identity widget lives on /admin/, so redirect here so it can process the token.
+    if (/[#&](recovery_token|invite_token|confirmation_token)=/.test(location.hash)) {
+      location.replace('/admin/' + location.hash);
+    }
+  </script>
+
   <script src="/assets/js/main.js"></script>
 </body>
 </html>
