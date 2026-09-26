@@ -31,106 +31,115 @@ collections:
     label: 'Site Settings'
     label_singular: 'Setting'
     description: 'Company-wide info: hero text, contacts, ABN, SEO.'
-    file: 'src/_data/settings.json'
-    fields:
-      - label: 'Company Name'
-        name: 'companyName'
-        widget: 'string'
-        hint: 'Full legal name. Shown in footer and JSON-LD.'
-      - label: 'Brand Short Name'
-        name: 'brandShort'
-        widget: 'string'
-        hint: 'Short form shown in the header logo (e.g. "GYO PRO").'
-      - label: 'Tagline'
-        name: 'tagline'
-        widget: 'string'
-        hint: 'Eyebrow text above the hero title.'
-      - label: 'Hero Title'
-        name: 'heroTitle'
-        widget: 'text'
-        hint: 'Main headline. Use <br> for line breaks.'
-      - label: 'Hero Subtitle / Lede'
-        name: 'heroLede'
-        widget: 'text'
-
-      - label: 'Contacts'
-        name: 'contacts'
-        widget: 'object'
+    files:
+      - name: settings
+        label: 'Settings'
+        file: 'src/_data/settings.json'
         fields:
-          - label: 'Elsa'
-            name: 'elsa'
-            widget: 'object'
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string', default: 'Elsa' }
-              - { label: 'Language', name: 'lang', widget: 'string', default: 'English' }
-              - { label: 'Phone', name: 'phone', widget: 'string', hint: 'Format: +61 XXX XXX XXX' }
-          - label: 'Yao'
-            name: 'yao'
-            widget: 'object'
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string', default: '姚' }
-              - { label: 'Language', name: 'lang', widget: 'string', default: '仅限中文' }
-              - { label: 'Phone', name: 'phone', widget: 'string' }
-          - { label: 'Email', name: 'email', widget: 'string' }
-
-      - label: 'ABN'
-        name: 'abn'
-        widget: 'string'
-        hint: 'Australian Business Number, format: XX XXX XXX XXX'
-
-      - label: 'Service Area'
-        name: 'serviceArea'
-        widget: 'string'
-        default: 'Servicing Australia-wide · Commercial & Residential'
-
-      - label: 'SEO'
-        name: 'seo'
-        widget: 'object'
-        fields:
-          - label: 'Page Title'
-            name: 'title'
+          - label: 'Company Name'
+            name: 'companyName'
             widget: 'string'
-          - label: 'Meta Description'
-            name: 'description'
+            hint: 'Full legal name. Shown in footer and JSON-LD.'
+          - label: 'Brand Short Name'
+            name: 'brandShort'
+            widget: 'string'
+            hint: 'Short form shown in the header logo (e.g. "GYO PRO").'
+          - label: 'Tagline'
+            name: 'tagline'
+            widget: 'string'
+            hint: 'Eyebrow text above the hero title.'
+          - label: 'Hero Title'
+            name: 'heroTitle'
             widget: 'text'
-            hint: '~155 characters. Shown in Google search results.'
+            hint: 'Main headline. Use <br> for line breaks.'
+          - label: 'Hero Subtitle / Lede'
+            name: 'heroLede'
+            widget: 'text'
+
+          - label: 'Contacts'
+            name: 'contacts'
+            widget: 'object'
+            fields:
+              - label: 'Elsa'
+                name: 'elsa'
+                widget: 'object'
+                fields:
+                  - { label: 'Name', name: 'name', widget: 'string', default: 'Elsa' }
+                  - { label: 'Language', name: 'lang', widget: 'string', default: 'English' }
+                  - { label: 'Phone', name: 'phone', widget: 'string', hint: 'Format: +61 XXX XXX XXX' }
+              - label: 'Yao'
+                name: 'yao'
+                widget: 'object'
+                fields:
+                  - { label: 'Name', name: 'name', widget: 'string', default: '姚' }
+                  - { label: 'Language', name: 'lang', widget: 'string', default: '仅限中文' }
+                  - { label: 'Phone', name: 'phone', widget: 'string' }
+              - { label: 'Email', name: 'email', widget: 'string' }
+
+          - label: 'ABN'
+            name: 'abn'
+            widget: 'string'
+            hint: 'Australian Business Number, format: XX XXX XXX XXX'
+
+          - label: 'Service Area'
+            name: 'serviceArea'
+            widget: 'string'
+            default: 'Servicing Australia-wide · Commercial & Residential'
+
+          - label: 'SEO'
+            name: 'seo'
+            widget: 'object'
+            fields:
+              - label: 'Page Title'
+                name: 'title'
+                widget: 'string'
+              - label: 'Meta Description'
+                name: 'description'
+                widget: 'text'
+                hint: '~155 characters. Shown in Google search results.'
 
   # ── Services (single file, list of services) ──
   - name: services
     label: 'Services'
     description: 'The list of services shown in the Services section.'
-    file: 'src/_data/services.json'
-    fields:
-      - label: 'Services'
-        name: 'services'
-        widget: 'list'
+    files:
+      - name: services
+        label: 'Services'
+        file: 'src/_data/services.json'
         fields:
-          - { label: 'Name', name: 'name', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'text' }
-          - label: 'Icon'
-            name: 'icon'
-            widget: 'select'
-            options:
-              - { label: 'Cornice (curves)', value: 'cornice' }
-              - { label: 'Insulation (house)', value: 'insulation' }
-              - { label: 'Framing (grid)', value: 'framing' }
-              - { label: 'Plaster (square)', value: 'plaster' }
-              - { label: 'Float & Set (trowel)', value: 'float' }
-          - { label: 'Order', name: 'order', widget: 'number', value_type: 'int', default: 0 }
+          - label: 'Services'
+            name: 'services'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - label: 'Icon'
+                name: 'icon'
+                widget: 'select'
+                options:
+                  - { label: 'Cornice (curves)', value: 'cornice' }
+                  - { label: 'Insulation (house)', value: 'insulation' }
+                  - { label: 'Framing (grid)', value: 'framing' }
+                  - { label: 'Plaster (square)', value: 'plaster' }
+                  - { label: 'Float & Set (trowel)', value: 'float' }
+              - { label: 'Order', name: 'order', widget: 'number', value_type: 'int', default: 0 }
 
   # ── Cookie banner text ──
   - name: cookies
     label: 'Cookie Banner'
     description: 'The cookie consent popup shown on first visit.'
-    file: 'src/_data/cookies.json'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - label: 'Privacy Policy URL'
-        name: 'learnMoreUrl'
-        widget: 'string'
-        required: false
-        hint: 'Leave empty until you create /privacy.html'
+    files:
+      - name: cookies
+        label: 'Cookie Banner'
+        file: 'src/_data/cookies.json'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'text' }
+          - label: 'Privacy Policy URL'
+            name: 'learnMoreUrl'
+            widget: 'string'
+            required: false
+            hint: 'Leave empty until you create /privacy.html'
 
   # ── Projects (one markdown file per project) ──
   - name: projects
