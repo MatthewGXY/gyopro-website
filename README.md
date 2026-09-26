@@ -5,8 +5,8 @@ Built with **Eleventy** + **Decap CMS** so you can edit content from a web UI wi
 
 ## Live URL
 
-- **Production**: https://gyopro.net.au/
-- **Admin CMS**: https://gyopro.net.au/admin/
+- **Production**: https://gyopro.com.au/
+- **Admin CMS**: https://gyopro.com.au/admin/
 
 ## Project structure
 
@@ -47,7 +47,7 @@ The site is wired up to **Decap CMS**, a Git-based editor that lives at `/admin/
 
 ### Once you've deployed (see "Deploy" below)
 
-1. Go to **https://gyopro.net.au/admin/**
+1. Go to **https://gyopro.com.au/admin/**
 2. Sign in with **GitHub** (your account)
 3. Pick a collection from the sidebar:
    - **Site Settings** — company name, hero title, contacts, ABN, SEO
@@ -127,13 +127,13 @@ git push -u origin main
 
 You'll get a `*.netlify.app` URL immediately.
 
-#### 3. Connect `gyopro.net.au`
+#### 3. Connect `gyopro.com.au`
 
-- Netlify → **Domain settings** → **Add custom domain** → `gyopro.net.au`
+- Netlify → **Domain settings** → **Add custom domain** → `gyopro.com.au`
 - Netlify shows a CNAME target like `<your-site>.netlify.app`
-- At your domain registrar (where you bought `gyopro.net.au`), set:
-  - `gyopro.net.au` → CNAME → `<your-site>.netlify.app`
-  - `www.gyopro.net.au` → CNAME → `<your-site>.netlify.app`
+- At your domain registrar (where you bought `gyopro.com.au`), set:
+  - `gyopro.com.au` → CNAME → `<your-site>.netlify.app`
+  - `www.gyopro.com.au` → CNAME → `<your-site>.netlify.app`
 - HTTPS auto-provisions via Let's Encrypt
 
 #### 4. Update Decap config with your repo path
@@ -155,16 +155,16 @@ Every `git push` to `main` triggers a Netlify rebuild automatically. The CMS pub
 
 ## Post-deploy checklist
 
-- [ ] Visit `https://gyopro.net.au/` — confirm site loads
+- [ ] Visit `https://gyopro.com.au/` — confirm site loads
 - [ ] Test mobile view (DevTools → device toolbar)
 - [ ] Click phone numbers on mobile — confirm dial works
 - [ ] Click email — confirm mail client opens
-- [ ] Visit `https://gyopro.net.au/admin/` — confirm Decap CMS UI loads
+- [ ] Visit `https://gyopro.com.au/admin/` — confirm Decap CMS UI loads
 - [ ] Sign in with GitHub — confirm you reach the editor
 - [ ] Edit **Site Settings** → change heroTitle → Publish → wait ~1 min → reload site
 - [ ] Validate HTML: https://validator.w3.org/
 - [ ] Validate Schema.org: https://search.google.com/test/rich-results
-- [ ] Google Search Console → submit `https://gyopro.net.au/sitemap.xml`
+- [ ] Google Search Console → submit `https://gyopro.com.au/sitemap.xml`
 - [ ] Register Google Business Profile (critical for local SEO in Australia)
 
 ## Things to update later
@@ -179,7 +179,7 @@ Every `git push` to `main` triggers a Netlify rebuild automatically. The CMS pub
 | Cookie banner | **Admin → Cookie Banner** |
 | Favicon (currently JPG) | Replace `assets/img/favicon.png` with a real `.ico` if you want IE support |
 | Logo SVG | Replace `<img src="/assets/img/图2.jpg">` references with `图2.svg` once available |
-| Domain DNS | At your registrar: CNAME `gyopro.net.au` → `<your-site>.netlify.app` |
+| Domain DNS | At your registrar: CNAME `gyopro.com.au` → `<your-site>.netlify.app` |
 
 ## SEO notes
 
@@ -204,7 +204,7 @@ Every `git push` to `main` triggers a Netlify rebuild automatically. The CMS pub
 Site owner: GYO PRO PTY LTD
 - Elsa (English): +61 450 920 702
 - Yao (中文): +61 452 053 381
-- Email: Manager@gyopro.net.au
+- Email: Manager@gyopro.com.au
 
 ## Stack credits
 
