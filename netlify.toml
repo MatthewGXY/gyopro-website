@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Edge Functions — run at edge before content serving
+[edge_functions]
+  domain-redirect = "/"
+
 # Cache static assets aggressively
 [[headers]]
   for = "/assets/*"
@@ -16,8 +20,3 @@
   for = "/admin/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
-
-# ─────────────────────────────────────────────────────────────
-# Domain redirects — handled by _redirects file in site root
-# (Netlify's domain aliases bypass netlify.toml redirect rules)
-# ─────────────────────────────────────────────────────────────

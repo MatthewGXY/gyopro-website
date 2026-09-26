@@ -1,7 +1,0 @@
-# Netlify _redirects file
-# Format: <from> <to> [<status>]
-# Domain-level redirects — all alternate hosts → primary gyopro.com.au
-
-https://www.gyopro.com.au/*  https://gyopro.com.au/:splat  301
-https://gyopro.net.au/*      https://gyopro.com.au/:splat  301
-https://www.gyopro.net.au/*  https://gyopro.com.au/:splat  301
