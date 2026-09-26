@@ -28,3 +28,13 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Dev artifacts / user screenshots / reference images at root
+# (canonical copies live in assets/img/ for site use)
+/cookie.jpg
+/图*.jpg
+/图*.png
+/index.html
+
+# Anything in dev-assets/ is local-only
+/dev-assets/
