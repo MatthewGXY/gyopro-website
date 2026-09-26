@@ -20,20 +20,18 @@
 # ─────────────────────────────────────────────────────────────
 # Domain redirects — all alternate hosts → primary gyopro.com.au
 # ─────────────────────────────────────────────────────────────
+# Use conditions-based redirects: match any path, but only when Host
+# header is one of the alternate domains.
 [[redirects]]
-  from = "https://www.gyopro.com.au/*"
+  from = "/*"
   to = "https://gyopro.com.au/:splat"
   status = 301
   force = true
+  conditions = {Host = ["gyopro.net.au", "www.gyopro.net.au"]}
 
 [[redirects]]
-  from = "https://gyopro.net.au/*"
+  from = "/*"
   to = "https://gyopro.com.au/:splat"
   status = 301
   force = true
-
-[[redirects]]
-  from = "https://www.gyopro.net.au/*"
-  to = "https://gyopro.com.au/:splat"
-  status = 301
-  force = true
+  conditions = {Host = ["www.gyopro.com.au"]}
