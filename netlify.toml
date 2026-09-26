@@ -18,29 +18,6 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 # ─────────────────────────────────────────────────────────────
-# Domain redirects — all alternate hosts → primary gyopro.com.au
-# Try absolute URL form (matching Netlify's documented examples)
+# Domain redirects — handled by _redirects file in site root
+# (Netlify's domain aliases bypass netlify.toml redirect rules)
 # ─────────────────────────────────────────────────────────────
-[[redirects]]
-  from = "https://gyopro.net.au"
-  to = "https://gyopro.com.au/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://gyopro.net.au/*"
-  to = "https://gyopro.com.au/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.gyopro.net.au/*"
-  to = "https://gyopro.com.au/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.gyopro.com.au/*"
-  to = "https://gyopro.com.au/:splat"
-  status = 301
-  force = true
