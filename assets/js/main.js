@@ -48,6 +48,7 @@
   }
 
   // ============================================================
+  // ============================================================
   // 4. Cookie consent banner
   // ============================================================
   var STORAGE_KEY = "gyo_cookie_consent";
@@ -158,4 +159,34 @@
     try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
     showBanner();
   };
+
+  // ============================================================
+  // 5. Remove Netlify "Powered by" badge
+  // (CSS handles <a>; this handles iframes + late-injected nodes)
+  // ============================================================
+  function removeNetlifyBadge() {
+    var selectors = [
+      "#netlify-badge",
+      ".netlify-badge",
+      'iframe[src*="netlify.com"]',
+      'iframe[title*="Netlify"]',
+      'a[href="https://www.netlify.com/"]'
+    ];
+    selectors.forEach(function (sel) {
+      var nodes = document.querySelectorAll(sel);
+      nodes.forEach(function (n) { n.remove(); });
+    });
+  }
+  // Run once on load and again after a short delay (badge injects async)
+  removeNetlifyBadge();
+  setTimeout(removeNetlifyBadge, 500);
+  setTimeout(removeNetlifyBadge, 2000);
+
+  // Watch for late additions (badge script may append after a few seconds)
+  if ("MutationObserver" in window) {
+    var mo = new MutationObserver(function () { removeNetlifyBadge(); });
+    mo.observe(document.body, { childList: true, subtree: true });
+    // Stop observing after 10s — badge either appeared and was killed, or won't appear
+    setTimeout(function () { mo.disconnect(); }, 10000);
+  }
 })();
