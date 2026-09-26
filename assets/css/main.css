@@ -130,6 +130,10 @@ section { padding: 5rem 0; }
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line-soft);
+  /* iPhone notch / Dynamic Island safe-area */
+  padding-top: env(safe-area-inset-top, 0);
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
 }
 
 .header-inner {
@@ -181,25 +185,29 @@ section { padding: 5rem 0; }
   height: 48px;
   border-radius: var(--radius);
   transition: background 0.15s ease;
+  /* Slightly stronger border so the hamburger reads on light backgrounds too */
+  border: 1px solid rgba(245, 241, 232, 0.12);
 }
 .nav-toggle-label:hover,
 .nav-toggle:checked ~ .nav-toggle-label {
   background: rgba(200, 169, 106, 0.08);
+  border-color: rgba(200, 169, 106, 0.3);
 }
 .nav-toggle-label span {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 22px;
+  height: 2.5px;
   background: var(--cream);
   transition: transform 0.2s ease, opacity 0.2s ease;
   transform-origin: center;
+  border-radius: 2px;
 }
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(7.5px) rotate(45deg);
 }
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) { opacity: 0; }
 .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 .site-nav ul {
@@ -656,6 +664,10 @@ section { padding: 5rem 0; }
   font-family: var(--font-sans);
   transform: translateY(100%);
   transition: transform 0.32s ease;
+  /* iPhone home indicator safe-area */
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
 }
 .cookie-banner:not([hidden]) {
   transform: translateY(0);
