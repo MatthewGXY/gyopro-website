@@ -6,7 +6,7 @@
 #      for Decap's built-in GitHub backend to work.
 #   2. Update `repo:` below to your repo path.
 #   3. Commit and push.
-#   4. Visit https://gyopro.com.au/admin/ and sign in with GitHub.
+#   4. Visit https://gyopro.net.au/admin/ and sign in with GitHub.
 # ─────────────────────────────────────────────────────────────
 
 backend:

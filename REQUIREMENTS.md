@@ -7,7 +7,7 @@
 ## 品牌资产
 
 - **公司全称**: GYO PRO PTY LTD
-- **域名**: gyopro.com.au（计划中）
+- **域名**: gyopro.net.au（计划中）
 - **logo**: 见 `图2.jpg`（金色渐变双屋 icon + GYO PRO PTY LTD 字标，白底）
 - **tagline**: "Plaster & Gyprock specialist Services"
 - **主营**: 商业 + 住宅项目的石膏板吊顶与隔墙
@@ -88,7 +88,7 @@ ABN 待用户提供，footer 与 schema.org 结构化数据保留位置。
 |---|---|
 | 交付形态 | 品牌宣传网站 |
 | 语言 | 英文为主 + 中文联系单独 |
-| 域名 | gyopro.com.au |
+| 域名 | gyopro.net.au |
 | 技术栈 | 纯静态 HTML/CSS/JS |
 | 服务区域 | 澳大利亚全国 |
 | ABN | 占位，用户后期填 |
