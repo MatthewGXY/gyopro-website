@@ -19,25 +19,28 @@
 
 # ─────────────────────────────────────────────────────────────
 # Domain redirects — all alternate hosts → primary gyopro.com.au
-# Split into one rule per host (array form may not parse reliably)
+# Try absolute URL form (matching Netlify's documented examples)
 # ─────────────────────────────────────────────────────────────
 [[redirects]]
-  from = "/*"
-  to = "https://gyopro.com.au/:splat"
+  from = "https://gyopro.net.au"
+  to = "https://gyopro.com.au/"
   status = 301
   force = true
-  conditions = {Host = "gyopro.net.au"}
 
 [[redirects]]
-  from = "/*"
+  from = "https://gyopro.net.au/*"
   to = "https://gyopro.com.au/:splat"
   status = 301
   force = true
-  conditions = {Host = "www.gyopro.net.au"}
 
 [[redirects]]
-  from = "/*"
+  from = "https://www.gyopro.net.au/*"
   to = "https://gyopro.com.au/:splat"
   status = 301
   force = true
-  conditions = {Host = "www.gyopro.com.au"}
+
+[[redirects]]
+  from = "https://www.gyopro.com.au/*"
+  to = "https://gyopro.com.au/:splat"
+  status = 301
+  force = true
