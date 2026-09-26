@@ -10,10 +10,11 @@
 # ─────────────────────────────────────────────────────────────
 
 backend:
-  name: github
-  repo: MatthewGXY/gyopro-website          # ← replace with your GitHub username/repo
+  name: git-gateway
   branch: main
-  open_authoring: false
+  # Git Gateway uses Netlify Identity (free) — no OAuth app setup needed
+  # Enable at: Netlify → Site settings → Identity → Enable Identity
+  # Then:      Identity → Services → Enable Git Gateway
 
 # Where uploaded images go (committed to git)
 media_folder: assets/photos
