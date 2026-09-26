@@ -1,7 +1,8 @@
 ---
 layout: layout.njk
-title: "{{ settings.seo.title }}"
-description: "{{ settings.seo.description }}"
+eleventyComputed:
+  title: "{{ settings.seo.title | safe }}"
+  description: "{{ settings.seo.description | safe }}"
 ---
 
 <!-- ============ HERO ============ -->
