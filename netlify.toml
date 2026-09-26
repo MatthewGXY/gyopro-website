@@ -16,3 +16,24 @@
   for = "/admin/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# ─────────────────────────────────────────────────────────────
+# Domain redirects — all alternate hosts → primary gyopro.com.au
+# ─────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "https://www.gyopro.com.au/*"
+  to = "https://gyopro.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://gyopro.net.au/*"
+  to = "https://gyopro.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.gyopro.net.au/*"
+  to = "https://gyopro.com.au/:splat"
+  status = 301
+  force = true
