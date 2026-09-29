@@ -189,4 +189,37 @@
     // Stop observing after 10s — badge either appeared and was killed, or won't appear
     setTimeout(function () { mo.disconnect(); }, 10000);
   }
+
+  // ============================================================
+  // 6. Projects: "View more" toggle for the 3 hidden cards
+  // Uses class toggle (NOT [hidden] attribute) for Safari compatibility
+  // Wrapped in try-catch so errors don't break other features
+  // ============================================================
+  try {
+    var projToggle = document.getElementById("projects-toggle");
+    var projLabel = projToggle && projToggle.querySelector(".projects-toggle-label");
+    var projExtras = document.querySelectorAll(".project-card--extra");
+    if (projToggle && projExtras.length) {
+      projToggle.addEventListener("click", function () {
+        var expanded = projToggle.getAttribute("aria-expanded") === "true";
+        var next = !expanded;
+        projToggle.setAttribute("aria-expanded", next ? "true" : "false");
+        if (projLabel) projLabel.textContent = next ? "View less" : "View more";
+
+        projExtras.forEach(function (card, i) {
+          window.setTimeout(function () {
+            if (next) {
+              card.classList.add("is-shown");
+              card.style.display = ""; // let CSS rule take over
+            } else {
+              card.classList.remove("is-shown");
+              card.style.display = "none"; // belt-and-suspenders for Safari
+            }
+          }, i * 80);
+        });
+      });
+    }
+  } catch (err) {
+    // Silently fail; other features keep working
+  }
 })();

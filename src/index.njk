@@ -31,11 +31,11 @@ eleventyComputed:
       <a href="#contact" class="btn-primary">Request a quote</a>
     </div>
 
-    <div class="hero-photos" aria-hidden="true">
-      <div class="photo-tile tile-1"><span>Project photo 1</span></div>
-      <div class="photo-tile tile-2"><span>Project photo 2</span></div>
-      <div class="photo-tile tile-3"><span>Project photo 3</span></div>
-      <div class="photo-tile tile-4"><span>Project photo 4</span></div>
+    <div class="hero-photos">
+      <div class="photo-tile tile-1"><img src="/assets/photos/hero/01-living-room.jpg" alt="Completed living room with plasterboard ceiling and feature bulkhead" loading="lazy" /></div>
+      <div class="photo-tile tile-2"><img src="/assets/photos/hero/02-framing.jpg" alt="Timber wall framing ready for plasterboard" loading="lazy" /></div>
+      <div class="photo-tile tile-3"><img src="/assets/photos/hero/03-vault-ceiling.jpg" alt="Vaulted ceiling with plasterboard lining and insulation" loading="lazy" /></div>
+      <div class="photo-tile tile-4"><img src="/assets/photos/hero/04-plasterboard.jpg" alt="Plasterboard sheets installed on ceiling" loading="lazy" /></div>
     </div>
   </div>
 </section>
@@ -65,35 +65,27 @@ eleventyComputed:
       <p class="section-sub">A snapshot of recent commercial and residential jobs across Australia.</p>
     </header>
 
-    {% set projectList = collections.projects | reverse %}
-    {% if projectList.length > 0 %}
-      <ul class="project-grid">
-        {%- for p in projectList %}
-          <li class="project-card">
-            {%- if p.data.photos and p.data.photos.length > 0 %}
-              <img src="{{ p.data.photos[0] }}" alt="{{ p.data.title }}" loading="lazy" />
-            {%- else %}
-              <span class="project-placeholder">{{ p.data.title }}</span>
-            {%- endif %}
-          </li>
-        {%- endfor %}
-      </ul>
-      <p class="projects-note">
-        Showing {{ projectList.length }} project{{ "s" if projectList.length != 1 else "" }}.
-      </p>
-    {% else %}
-      <ul class="project-grid">
-        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
-        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
-        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
-        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
-        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
-        <li class="project-card"><span class="project-placeholder">Project photo</span></li>
-      </ul>
-      <p class="projects-note">
-        Project photos coming soon. Add them via the admin.
-      </p>
-    {% endif %}
+    <ul class="project-grid">
+      <li class="project-card"><img src="/assets/photos/gallery/01-framing-walkthrough.jpg" alt="Walkthrough of timber wall framing during fit-out" loading="lazy" /></li>
+      <li class="project-card"><img src="/assets/photos/gallery/02-plasterboard-floor.jpg" alt="Ram Board protection on concrete floor with scaffold staged for ceiling" loading="lazy" /></li>
+      <li class="project-card"><img src="/assets/photos/gallery/03-feature-ceiling.jpg" alt="Recessed feature ceiling with bulkhead and cove lighting" loading="lazy" /></li>
+      <li class="project-card"><img src="/assets/photos/gallery/04-vault-ceiling-progress.jpg" alt="Vaulted ceiling with plasterboard partially installed" loading="lazy" /></li>
+      <li class="project-card"><img src="/assets/photos/gallery/05-bulkhead-detail.jpg" alt="Detail view of plasterboard bulkhead transition" loading="lazy" /></li>
+      <li class="project-card"><img src="/assets/photos/gallery/06-large-room-framing.jpg" alt="Large open-plan room with timber ceiling framing" loading="lazy" /></li>
+
+      <li class="project-card project-card--extra"><img src="/assets/photos/gallery/07-entryway-arch-ceiling.jpg" alt="Finished entryway with arched plasterboard bulkhead and French doors" loading="lazy" /></li>
+      <li class="project-card project-card--extra"><img src="/assets/photos/gallery/08-wall-repair-prep.jpg" alt="Patchy wall surface prepared for skim coat" loading="lazy" /></li>
+      <li class="project-card project-card--extra"><img src="/assets/photos/gallery/09-vaulted-void-timber-beams.jpg" alt="Double-height void with exposed timber beams and plasterboard ceiling" loading="lazy" /></li>
+    </ul>
+
+    <div class="projects-actions">
+      <button type="button" id="projects-toggle" class="btn-primary" aria-expanded="false" aria-controls="project-extra-list">
+        <span class="projects-toggle-label">View more</span>
+        <svg class="projects-toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
   </div>
 </section>
 
